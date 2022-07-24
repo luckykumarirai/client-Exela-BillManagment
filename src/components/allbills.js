@@ -14,7 +14,8 @@ const AllBill=() =>{
     const [pagesperpage,setPagesperpage] = useState(1);
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/')
+
+        axios.get(process.env.REACT_APP_SERVER_URL)
         .then(function (response) {
             console.log(response.data.length);
             setData(response.data);

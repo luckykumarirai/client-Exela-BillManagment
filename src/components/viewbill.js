@@ -13,7 +13,7 @@ const ViewBill=() =>{
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/bill/'+id)
+        axios.get(process.env.REACT_APP_SERVER_URL+'bill/'+id)
         .then(function (response) {
             console.log(response.data[0]);
             setData(response.data[0]);
@@ -25,7 +25,7 @@ const ViewBill=() =>{
 
     const deletebill=(id) =>{
         console.log(id);
-        axios.get('http://localhost:5000/delete/'+id)
+        axios.get(process.env.REACT_APP_SERVER_URL+'delete/'+id)
         .then(function (response) {
             alert("succesfull delete!");
             navigate("/");

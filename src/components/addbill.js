@@ -12,7 +12,7 @@ const AddBill =()=>{
 
     const handlesubmit=()=>{
 
-        axios.post('http://localhost:5000/',{
+        axios.post(process.env.REACT_APP_SERVER_URL,{
             billDate: billDate,
             paidDate:paidDate,
             unitConsumed: unitConsumed,

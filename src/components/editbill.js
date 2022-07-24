@@ -16,7 +16,7 @@ const EditBill =()=>{
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/bill/'+id)
+        axios.get(process.env.REACT_APP_SERVER_URL+'bill/'+id)
         .then(function (response) {
             //console.log(response.data[0]);
             setBillDate(response.data[0].billDate);
@@ -31,7 +31,7 @@ const EditBill =()=>{
 
     const editbill=()=>{
 
-        axios.put('http://localhost:5000/'+id+"/edit",{
+        axios.put(process.env.REACT_APP_SERVER_URL+id+"/edit",{
             billDate: billDate,
             paidDate:paidDate,
             unitConsumed: unitConsumed,
@@ -45,7 +45,6 @@ const EditBill =()=>{
           .catch(function (error) {
             console.log(error);
         });
-        console.log(billDate,paidDate,unitConsumed,amount)
     }
 
     return(
