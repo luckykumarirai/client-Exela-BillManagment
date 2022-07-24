@@ -43,7 +43,7 @@ const AllBill=() =>{
     
     return(
         <>
-        <div className="container" style={{marginTop:"5%"}}>
+        <div className="container" style={{marginTop:"2%"}}>
             <h1>All Bill</h1>
         <Table striped bordered hover>
             <thead>
